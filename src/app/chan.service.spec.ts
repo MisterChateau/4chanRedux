@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { ThreadService } from './thread.service';
+import { ChanService } from './chan.service';
 
-describe('ThreadService', () => {
+describe('ChanService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ThreadService]
+      providers: [ChanService]
     });
   });
 
-  it('should ...', inject([ThreadService], (service: ThreadService) => {
+  it('should ...', inject([ChanService], (service: ChanService) => {
     expect(service).toBeTruthy();
   }));
 });

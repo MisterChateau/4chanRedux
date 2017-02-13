@@ -26,8 +26,7 @@ app.get('/catalog/:board', function (req, res) {
                         r.pluck('threads')
                     )(response.data);
         })
-        .then(r.compose(r.join('<br>'), r.map((thread) => `<img src=${thread.imageThumbnailUrl}>`)))
-        .then((html) => res.send(html))
+        .then((threads) => res.send(threads))
         .catch(err => console.log(err));
 })
 
