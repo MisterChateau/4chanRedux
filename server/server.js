@@ -1,15 +1,19 @@
 const express = require('express');
 const r = require('ramda');
 const timer = require('timers');
+var cors = require('cors')
 
 const axios = require('axios').create({
     headers: { 'If-Modified-Since': (new Date()).toUTCString(), 'User-Agent': 'nodeChanClient/0.0.1'}
 });
 
-const app = express();
+const app = express().use(cors());
+
 
 const mapThread = r.curry((board, thread) => {
     return {
+        name: thread.name,
+        replies: thread.replies,
         message: thread.com,
         imageUrl: `http://i.4cdn.org/${board}/${thread.tim}${thread.ext}`,
         imageThumbnailUrl: `http://i.4cdn.org/${board}/${thread.tim}s.jpg`
