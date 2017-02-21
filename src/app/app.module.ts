@@ -22,7 +22,7 @@ import { ChanService } from './chan.service';
 
 import { AppComponent } from './app.component';
 import { FindThreadComponent } from './containers/find-thread/find-thread.component';
-import { ThreadsListComponent } from './containers/threads-list/threads-list.component';
+import { ThreadsListComponent } from './components/threads-list/threads-list.component';
 import { ThreadCardComponent } from './components/thread-card/thread-card.component';
 
 @NgModule({
@@ -46,7 +46,7 @@ import { ThreadCardComponent } from './components/thread-card/thread-card.compon
      * meta-reducer. This returns all providers for an @ngrx/store
      * based application.
      */
-    StoreModule.provideStore({ thread: threadsReducer }),
+    StoreModule.provideStore({ threads: threadsReducer }),
 
     /**
      * @ngrx/router-store keeps router state up-to-date in the store and uses

@@ -5,16 +5,21 @@ import { State, threadsReducer } from 'app/reducers/thread';
 
 @Component({
   selector: 'app-threads-list',
-  templateUrl: './threads-list.component.html',
-  styleUrls: ['./threads-list.component.css']
+  styleUrls: ['./threads-list.component.css'],
+  template:
+    `
+      <md-grid-list cols="4" rowHeight="4:3" gutter="10px">
+        <md-grid-tile *ngFor="let thread of threads">
+          <app-thread-card [thread]="thread"></app-thread-card>
+        </md-grid-tile>
+      </md-grid-list>
+    `
 })
 export class ThreadsListComponent implements OnInit {
-  threads$: Observable<any[]>;
+  @Input() threads;
 
   constructor(private store: Store<State>) {}
 
   ngOnInit() {
-    this.threads$ = this.store.select('threads')
   }
-
 }
