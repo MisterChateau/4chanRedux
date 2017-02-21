@@ -6,11 +6,13 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./thread-card.component.css'],
   template:
   `
-    <div>
-      <div>By {{thread.name}} replies({{thread.replies}})</div>
-      <img src={{thread.imageThumbnailUrl}}>
-      <p>{{message}}</p>
-    </div>
+    <md-grid-tile-header>
+      <span>By {{thread.name}} - Replies({{thread.replies}})</span>
+    </md-grid-tile-header>
+    <img [src]="thread.imageUrl">
+    <md-grid-tile-footer>
+      <span [innerHtml]="message"></span>
+    </md-grid-tile-footer>
   `
 })
 export class ThreadCardComponent implements OnInit {

@@ -3,5 +3,5 @@ import { FindThreadComponent } from './containers/find-thread/find-thread.compon
 
 export const routes: Routes = [
     { path: 'thread', component: FindThreadComponent },
-    { path: '', redirectTo:'/thread', pathMatch: 'full' }
+    { path: '', redirectTo: '/thread', pathMatch: 'full' }
 ]

@@ -8,7 +8,7 @@ import { State, threadsReducer } from 'app/reducers/thread';
   styleUrls: ['./threads-list.component.css'],
   template:
     `
-      <md-grid-list cols="4" rowHeight="4:3" gutter="10px">
+      <md-grid-list cols="3" rowHeight="4:3" gutterSize="0">
         <md-grid-tile *ngFor="let thread of threads">
           <app-thread-card [thread]="thread"></app-thread-card>
         </md-grid-tile>

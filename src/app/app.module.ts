@@ -7,8 +7,10 @@ import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { ThreadEffects } from './effects/threadEffects';
+import { BoardEffects } from './effects/boardEffects';
 
 import { threadsReducer } from './reducers/thread';
+import { boardReducer } from './reducers/board';
 
 // import { DBModule } from '@ngrx/db';
 import { RouterStoreModule } from '@ngrx/router-store';
@@ -46,7 +48,7 @@ import { ThreadCardComponent } from './components/thread-card/thread-card.compon
      * meta-reducer. This returns all providers for an @ngrx/store
      * based application.
      */
-    StoreModule.provideStore({ threads: threadsReducer }),
+    StoreModule.provideStore({ threads: threadsReducer, boards: boardReducer }),
 
     /**
      * @ngrx/router-store keeps router state up-to-date in the store and uses
@@ -73,6 +75,7 @@ import { ThreadCardComponent } from './components/thread-card/thread-card.compon
      * See: https://github.com/ngrx/effects/blob/master/docs/api.md#run
      */
     EffectsModule.run(ThreadEffects),
+    EffectsModule.run(BoardEffects),
 
     /**
      * `provideDB` sets up @ngrx/db with the provided schema and makes the Database

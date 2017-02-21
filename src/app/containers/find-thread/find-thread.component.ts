@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/take';
 
 import { GetThreadsAction } from 'app/actions/thread';
-import { State } from 'app/reducers/thread';
+import { GetBoardsAction } from 'app/actions/board';
+import { State as ThreadState } from 'app/reducers/thread';
+import { State as BoardState } from 'app/reducers/board';
 
 @Component({
   selector: 'app-find-thread',
@@ -19,12 +22,17 @@ import { State } from 'app/reducers/thread';
 })
 export class FindThreadComponent implements OnInit {
   threads$: Observable<any[]>;
+  boards$: Observable<any[]>;
 
-  constructor(private store: Store<State>) {
+  constructor(private store: Store<any>) {
   }
 
   ngOnInit() {
-    this.threads$ = this.store.select((state: State) => state.threads.list);
+    this.threads$ = this.store.select((state: ThreadState) => state.threads.list).take(40);
+    this.boards$ = this.store.select((state: BoardState) => state.boards.list);
+
+    this.store.dispatch(new GetThreadsAction('int'));
+    this.store.dispatch(new GetBoardsAction(undefined));
   }
 
   onKeyUp(value) {

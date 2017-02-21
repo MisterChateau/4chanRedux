@@ -13,4 +13,9 @@ export class ChanService {
     return this.http.get(`${this.baseUrl}/catalog/${board}`)
       .map((response) => response.json());
   }
+
+  getBoards() {
+    return this.http.get(`${this.baseUrl}/boards`)
+      .map((response) => response.json());
+  }
 }
