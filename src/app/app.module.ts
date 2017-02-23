@@ -24,6 +24,7 @@ import { ChanService } from './chan.service';
 
 import { AppComponent } from './app.component';
 import { FindThreadComponent } from './containers/find-thread/find-thread.component';
+import { BoardListComponent } from './containers/board-list/board-list.component';
 import { ThreadsListComponent } from './components/threads-list/threads-list.component';
 import { ThreadCardComponent } from './components/thread-card/thread-card.component';
 
@@ -32,7 +33,8 @@ import { ThreadCardComponent } from './components/thread-card/thread-card.compon
     AppComponent,
     FindThreadComponent,
     ThreadsListComponent,
-    ThreadCardComponent
+    ThreadCardComponent,
+    BoardListComponent
   ],
   imports: [
     BrowserModule,

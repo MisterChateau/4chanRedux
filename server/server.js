@@ -36,7 +36,7 @@ app.get('/catalog/:board', function (req, res) {
         .catch(err => console.log(err));
 })
 
-const mapBoard = (board) => (console.log(board), { board: board.board, title: board.title });
+const mapBoard = (board) => ({ name: board.board, title: board.title });
 app.get('/boards', function (req, res) {
     axios.get(`http://a.4cdn.org/boards.json`)
         .then((response) => r.compose(r.map(mapBoard), r.path(['boards']))(response.data))

@@ -17,7 +17,7 @@ export const ActionTypes = {
 export class GetBoardsAction implements Action {
     type = ActionTypes.GET_BOARDS;
 
-    constructor(public payload: undefined) {}
+    constructor() {}
 }
 
 export class GetBoardsCompleteAction implements Action {

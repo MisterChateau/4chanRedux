@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Anton|Nunito+Sans|Orbitron');
+
 body {
   margin: 0;
-  background-color: #F06060;
+  width: 100%;
+  background-color: #FFFF9D;
   font-size: 62.5%;
   color: white;
 }

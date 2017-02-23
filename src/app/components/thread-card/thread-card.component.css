@@ -1,6 +1,5 @@
 :host {
   height: 100%;
-  font-size: 1.3em;
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -9,6 +8,16 @@
   justify-content: space-between;
 }
 
+:host /deep/ {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 2px black;
+}
+
+:host /deep/ md-grid-tile-header,
+:host /deep/ md-grid-tile-footer {
+  background-color: rgba(0, 0, 0, 0.7);
+}
 img {
   height: 100%;
   width: 100%;

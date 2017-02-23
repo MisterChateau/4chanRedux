@@ -1,0 +1,11 @@
+:host {
+  font-family: 'Orbitron', sans-serif;
+  white-space: nowrap;
+}
+
+div {
+  font-size: 1.3em;
+  margin: 0.5em;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px black;
+}
