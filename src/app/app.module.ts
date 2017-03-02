@@ -27,6 +27,8 @@ import { FindThreadComponent } from './containers/find-thread/find-thread.compon
 import { BoardListComponent } from './containers/board-list/board-list.component';
 import { ThreadsListComponent } from './components/threads-list/threads-list.component';
 import { ThreadCardComponent } from './components/thread-card/thread-card.component';
+import { ThreadRepliesComponent } from './containers/thread-replies/thread-replies.component';
+import { ReplyCardComponent } from './components/reply-card/reply-card.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ThreadCardComponent } from './components/thread-card/thread-card.compon
     FindThreadComponent,
     ThreadsListComponent,
     ThreadCardComponent,
-    BoardListComponent
+    BoardListComponent,
+    ThreadRepliesComponent,
+    ReplyCardComponent
   ],
   imports: [
     BrowserModule,

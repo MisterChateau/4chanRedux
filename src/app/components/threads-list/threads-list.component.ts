@@ -10,7 +10,7 @@ import { State, threadsReducer } from 'app/reducers/thread';
     `
       <md-grid-list cols="3" rowHeight="4:3" gutterSize="0">
         <md-grid-tile *ngFor="let thread of threads">
-          <app-thread-card [thread]="thread"></app-thread-card>
+          <app-thread-card [thread]="thread" router-link="/thread"></app-thread-card>
         </md-grid-tile>
       </md-grid-list>
     `
